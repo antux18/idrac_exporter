@@ -605,10 +605,6 @@ func (client *Client) RefreshPowerOld(mc *Collector, ch chan<- prometheus.Metric
 			}
 		}
 
-		if psu.Status.State != StateEnabled {
-			continue
-		}
-
 		id := strconv.Itoa(i)
 		mc.NewPowerSupplyHealth(ch, psu.Status.Health, id)
 
